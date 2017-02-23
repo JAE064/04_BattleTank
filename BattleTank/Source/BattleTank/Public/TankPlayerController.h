@@ -24,4 +24,7 @@ public:
 	//Al comenzar el barril del tanque a moverse
 	//Hacer que el tiro del crosshair intersecte en el mundo 
 	void AimTowardsCrosshair();
+
+	//Return un OUT parameter, true si colisiona con el terreno.
+	bool GetSightRayHitLocation(FVector& HitLocation) const;
 };
