@@ -31,10 +31,10 @@ ATank* ATankPlayerController::GetControlledTank() const
 void ATankPlayerController::AimTowardsCrosshair()
 {
 	if (!GetControlledTank()) { return; }
+
 	FVector HitLocation; // Out parameter
 	if (GetSightRayHitLocation(HitLocation)) { //Efecto secundario, hara una line trace
-		UE_LOG(LogTemp, Warning, TEXT("Look direction: %s"),*HitLocation.ToString());
-		//TODO Decir al Controlled Tank apunte hacia ese punto
+		GetControlledTank()->AimAt(HitLocation);
 	}
 }
 
