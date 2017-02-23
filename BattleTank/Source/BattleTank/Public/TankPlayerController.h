@@ -19,4 +19,9 @@ public:
 	
 	virtual void BeginPlay() override;
 	
+	virtual void Tick(float DeltaTime) override;
+
+	//Al comenzar el barril del tanque a moverse
+	//Hacer que el tiro del crosshair intersecte en el mundo 
+	void AimTowardsCrosshair();
 };
