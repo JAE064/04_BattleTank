@@ -33,7 +33,7 @@ void ATankPlayerController::AimTowardsCrosshair()
 	if (!GetControlledTank()) { return; }
 	FVector HitLocation; // Out parameter
 	if (GetSightRayHitLocation(HitLocation)) { //Efecto secundario, hara una line trace
-		UE_LOG(LogTemp, Warning, TEXT("Hit Location: %s"),*HitLocation.ToString());
+		//UE_LOG(LogTemp, Warning, TEXT("Look direction: %s"),*HitLocation.ToString());
 		//TODO Decir al Controlled Tank apunte hacia ese punto
 	}
 }
@@ -41,6 +41,11 @@ void ATankPlayerController::AimTowardsCrosshair()
 //Get la locacion del mundo, si la linea atravez del crosshair
 bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const
 {
-	HitLocation = FVector(1.0);
+	//Encontrar el crosshair position en coordenadas de pixel 
+	int32 ViewportSizeX, ViewportSizeY;
+	GetViewportSize(ViewportSizeX, ViewportSizeY);
+	auto ScreenLocation = FVector2D(ViewportSizeX * CrosshairXLocation, ViewportSizeY * CrosshairYLocation);
+	//"De-project" la posicion de la pantalla del crosshair a la dirección del mundo
+	//Line-trace hacia esa dirección, y ver donde colisiona (en el maximo rango)
 	return true;
 }
