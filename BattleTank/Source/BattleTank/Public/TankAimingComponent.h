@@ -7,6 +7,7 @@
 
 class UTankBarrel;
 
+//Contiene parametros para barrel y elevate
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class BATTLETANK_API UTankAimingComponent : public UActorComponent
 {
