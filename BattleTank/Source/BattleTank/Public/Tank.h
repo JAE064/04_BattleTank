@@ -47,4 +47,8 @@ private:
 
 	//Referencia para que aparesca el projectil
 	UTankBarrel* Barrel = nullptr;
+
+	float ReloadTimeInSeconds = 3;
+
+	double LastTimeFire = 0;
 };
