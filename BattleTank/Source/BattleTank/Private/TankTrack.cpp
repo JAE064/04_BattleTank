@@ -5,7 +5,6 @@
 
 void UTankTrack::SetThrottle(float Throttle)
 {
-	//TODO ajustar el valor del Throttle, para que el jugador pueda rescribirlo
 	auto ForceApplied = GetForwardVector() * Throttle * TrackMaxDrivingForce;
 	auto ForceLocation = GetComponentLocation();
 	auto TankRoot = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
