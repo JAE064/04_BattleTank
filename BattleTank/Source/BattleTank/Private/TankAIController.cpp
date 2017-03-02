@@ -16,7 +16,8 @@ void ATankAIController::Tick(float DeltaTime)
 	auto PlayerTank = Cast<ATank>(GetWorld()->GetFirstPlayerController()->GetPawn());
 	auto ControlledTank = Cast<ATank>(GetPawn());
 	if (PlayerTank) {
-		//TODO Mover hacia el jugador
+		//Mover hacia el jugador
+		MoveToActor(PlayerTank, AcceptanceRadius); //TODO Checar si radio esta en cm
 		//Apuntar hacia el jugador
 		ControlledTank->AimAt(PlayerTank->GetActorLocation());
 		ControlledTank->Fire(); //TODO Limitar el disparo por frame

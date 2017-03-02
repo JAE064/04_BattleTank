@@ -19,4 +19,6 @@ private:
 
 	virtual void Tick(float DeltaTime) override;
 
+	//Que tan cerca esta la AI puede estar
+	float AcceptanceRadius = 3000;
 };
