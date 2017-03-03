@@ -22,6 +22,8 @@ ATank::ATank()
 void ATank::BeginPlay()
 {
 	Super::BeginPlay(); //Se necesita para que el BP corra
+	auto TankName = GetName();
+	UE_LOG(LogTemp, Warning, TEXT("%s TEST: Tank C++ BeginPlay"), *TankName);
 	
 }
 
