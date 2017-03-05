@@ -15,7 +15,7 @@ void ATankAIController::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	auto PlayerTank = Cast<ATank>(GetWorld()->GetFirstPlayerController()->GetPawn());
 	auto ControlledTank = Cast<ATank>(GetPawn());
-	if (PlayerTank) {
+	if (ensure(PlayerTank)) {
 		//Mover hacia el jugador
 		MoveToActor(PlayerTank, AcceptanceRadius); //TODO Checar si radio esta en cm
 		//Apuntar hacia el jugador
