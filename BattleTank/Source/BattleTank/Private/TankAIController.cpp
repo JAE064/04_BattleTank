@@ -25,7 +25,8 @@ void ATankAIController::SetPawn(APawn* InPawn)
 
 void ATankAIController::OnPossedTankDeath()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Received"));
+	if (!ensure(GetPawn())) { return; } //TODO quitar ensure, si todo esta bien
+	GetPawn()->DetachFromControllerPendingDestroy();
 }
 
 //Llama cada frame
